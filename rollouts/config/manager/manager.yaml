@@ -84,7 +84,7 @@ spec:
         - /manager
         args:
         - --leader-elect
-        image: controller:latest
+        image: gcr.io/christopher-exp-anthos-dev/christopherfry/rollout-controller:latest
         name: manager
         securityContext:
           allowPrivilegeEscalation: false
@@ -108,9 +108,9 @@ spec:
         resources:
           limits:
             cpu: 500m
-            memory: 128Mi
+            memory: 256Mi
           requests:
-            cpu: 10m
+            cpu: 100m
             memory: 64Mi
       serviceAccountName: controller-manager
       terminationGracePeriodSeconds: 10
